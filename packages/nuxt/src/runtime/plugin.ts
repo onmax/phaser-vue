@@ -1,4 +1,5 @@
 import { createPhaserVue } from '@onmax/phaser-vue'
+import { defineNuxtPlugin, useRuntimeConfig } from '#imports'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const runtimeConfig = useRuntimeConfig()
