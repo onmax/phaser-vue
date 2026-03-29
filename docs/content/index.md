@@ -30,6 +30,55 @@ Build Phaser games with Vue orchestration, typed scene wiring, and explicit esca
 
 ::u-page-section{orientation="vertical"}
 #title
+Start with the path that matches your job
+
+#description
+Pick one route first. You do not need the full docs site to get a first working game.
+
+  :::u-page-grid{class="max-w-5xl mx-auto !grid-cols-1 sm:!grid-cols-2 lg:!grid-cols-3 !gap-4"}
+  ::::u-page-card
+  ---
+  icon: i-lucide-rocket
+  spotlight: true
+  to: /getting-started
+  ---
+  #title
+  Get to first success
+
+  #description
+  Install the package, mount one game, and verify the client-only contract.
+  ::::
+
+  ::::u-page-card
+  ---
+  icon: i-simple-icons-vuedotjs
+  spotlight: true
+  to: /vue
+  ---
+  #title
+  Build in Vue
+
+  #description
+  Learn the shared runtime, scene lifecycle, bridge APIs, primitives, and escape hatches.
+  ::::
+
+  ::::u-page-card
+  ---
+  icon: i-simple-icons-nuxtdotjs
+  spotlight: true
+  to: /nuxt
+  ---
+  #title
+  Build in Nuxt
+
+  #description
+  Install the module, configure runtime defaults, and keep Phaser explicitly client-only.
+  ::::
+  :::
+::
+
+::u-page-section{orientation="vertical"}
+#title
 Choose your track
 
 #description
@@ -199,7 +248,7 @@ The Nuxt layer stays thin. It improves ergonomics without duplicating the core r
 Try the demo
 
 #description
-Open the live Nuxt playground to see the bridge, scene wiring, and client-only host running together.
+Open the live Nuxt playground to see the bridge, scene wiring, and client-only host running together before you adopt the package in your own app.
 
 #links
 :u-button{to="https://phaser-vue-playground.vercel.app" target="_blank" size="xl" label="Open playground" trailing-icon="i-lucide-arrow-up-right"}
@@ -209,8 +258,12 @@ Open the live Nuxt playground to see the bridge, scene wiring, and client-only h
 #title
 Start with the docs that match your next step
 
+#description
+Use the getting-started pages for the happy path, then switch to the runtime-specific guides or reference pages when you need depth.
+
 #links
 :u-button{to="/getting-started" size="xl" label="Installation" trailing-icon="i-lucide-arrow-right"}
 :u-button{to="/vue-guide" size="xl" color="neutral" variant="outline" label="Vue guide" trailing-icon="i-lucide-arrow-right"}
 :u-button{to="/nuxt-module" size="xl" color="neutral" variant="outline" label="Nuxt module" trailing-icon="i-lucide-arrow-right"}
+:u-button{to="/api-reference" size="xl" color="neutral" variant="outline" label="API reference" trailing-icon="i-lucide-arrow-right"}
 ::

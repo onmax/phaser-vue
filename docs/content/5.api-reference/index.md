@@ -5,6 +5,8 @@ description: Review the public components, composables, types, and Nuxt module o
 
 This reference describes the exported public surface from the current alpha. It stays close to the actual package types and avoids inventing behavior that is not shipped.
 
+Use this section when you need exact names, options, and public contracts instead of a guided walkthrough.
+
 ## Reference sections
 
 - [Vue components](/api-reference/vue-components)

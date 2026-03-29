@@ -1,27 +1,67 @@
-<h1 align="center">@onmax/phaser-vue</h1>
+# Phaser Vue workspace
 
-<p align="center">Hybrid Phaser primitives for Vue and Nuxt</p>
+`phaser-vue` contains the Vue and Nuxt packages used to build Phaser games without hiding Phaser's scene model, plus the docs app, live playground, and examples used to develop the packages.
 
-<p align="center">
-  <a href="https://npmjs.com/package/@onmax/phaser-vue"><img src="https://img.shields.io/npm/v/@onmax/phaser-vue/latest.svg?style=flat&colorA=020420&colorB=00DC82" alt="npm version"></a>
-  <a href="https://npmjs.com/package/@onmax/nuxt-phaser"><img src="https://img.shields.io/npm/v/@onmax/nuxt-phaser/latest.svg?style=flat&colorA=020420&colorB=00DC82" alt="nuxt module version"></a>
-  <a href="https://npmjs.com/package/@onmax/phaser-vue"><img src="https://img.shields.io/npm/l/@onmax/phaser-vue.svg?style=flat&colorA=020420&colorB=00DC82" alt="license"></a>
-  <a href="https://vuejs.org"><img src="https://img.shields.io/badge/Vue-020420?logo=vuedotjs" alt="Vue"></a>
-  <a href="https://nuxt.com"><img src="https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js" alt="Nuxt"></a>
-</p>
+## What you will find here
 
-## Documentation
+- `@onmax/phaser-vue` for direct Vue 3 integration
+- `@onmax/nuxt-phaser` for the Nuxt wrapper and runtime defaults
+- `docs/` for the documentation site
+- `playground/` for the live Nuxt example app
+- `examples/` for smaller focused package examples
+- `skills/phaser-best-practices/` for local authoring guidance
 
-**[phaser-vue-docs.vercel.app](https://phaser-vue-docs.vercel.app/)**
+## Quickstart
 
-## Demo
+If you want to work on the playground first:
 
-**[phaser-vue-playground.vercel.app](https://phaser-vue-playground.vercel.app/)**
+```bash
+pnpm install
+pnpm dev:playground
+```
 
-## Skills
+Expected result: the Nuxt playground starts locally so you can validate scene wiring, bridge usage, and client-only mounting behavior.
 
-**[skills/phaser-best-practices](./skills/phaser-best-practices)**
+## Install the packages
 
-## License
+```bash
+pnpm add @onmax/phaser-vue phaser
+```
 
-MIT
+For Nuxt, install both packages:
+
+```bash
+pnpm add @onmax/nuxt-phaser @onmax/phaser-vue phaser
+```
+
+## Key links
+
+- Docs: [phaser-vue-docs.vercel.app](https://phaser-vue-docs.vercel.app/)
+- Playground: [phaser-vue-playground.vercel.app](https://phaser-vue-playground.vercel.app/)
+- Local skill: [`skills/phaser-best-practices`](./skills/phaser-best-practices/SKILL.md)
+
+## Common workflows
+
+```bash
+pnpm build
+pnpm test
+pnpm typecheck
+pnpm dev:docs
+pnpm dev:playground
+```
+
+## Workspace layout
+
+```text
+phaser-vue/
+  docs/         # Docus site
+  examples/     # Focused package examples
+  packages/     # Published Vue and Nuxt packages
+  playground/   # Nuxt demo app
+  skills/       # Local authoring guidance
+```
+
+## Related docs
+
+- [`docs/README.md`](./docs/README.md) for docs-site development
+- [`playground/README.md`](./playground/README.md) for the local demo app

@@ -8,6 +8,8 @@ navigation: false
 
 This track covers the host component, scene lifecycle, primitives, composables, and the imperative escape hatches that keep Phaser in control of hot-path behavior.
 
+Use this section when you already know you want the Vue runtime and you need to decide which part of the API to learn next.
+
 ::u-page-section{orientation="vertical"}
 #title
 Start in the Vue layer

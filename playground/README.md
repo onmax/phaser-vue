@@ -1,18 +1,20 @@
-<h1 align="center">phaser-vue playground</h1>
+# Phaser Vue playground
 
-<p align="center">Nuxt playground for <a href="https://github.com/onmax/phaser-vue">@onmax/phaser-vue</a> and <a href="https://github.com/onmax/phaser-vue">@onmax/nuxt-phaser</a></p>
+This Nuxt app is the local playground for `@onmax/phaser-vue` and `@onmax/nuxt-phaser`.
 
-## Demo
+## Quickstart
 
-**[phaser-vue-playground.vercel.app](https://phaser-vue-playground.vercel.app/)**
-
-## Documentation
-
-**[phaser-vue-docs.vercel.app](https://phaser-vue-docs.vercel.app/)**
-
-## Development
+Run these commands from the `phaser-vue/` workspace root.
 
 ```bash
 pnpm install
-pnpm dev
+pnpm dev:playground
 ```
+
+Expected result: the playground starts locally so you can validate package behavior in a real Nuxt app before publishing or changing the docs.
+
+## Related links
+
+- Demo: [phaser-vue-playground.vercel.app](https://phaser-vue-playground.vercel.app/)
+- Docs: [phaser-vue-docs.vercel.app](https://phaser-vue-docs.vercel.app/)
+- Workspace overview: [`../README.md`](../README.md)

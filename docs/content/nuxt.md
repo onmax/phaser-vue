@@ -6,6 +6,8 @@ navigation: false
 
 `@onmax/nuxt-phaser` wraps the Vue package with Nuxt-specific ergonomics. It registers the runtime plugin, exposes `#phaser`, adds auto-imports, and gives you a client-only wrapper component without duplicating the core lifecycle logic.
 
+Use this section when you want to wire Phaser into a Nuxt app without losing the underlying Vue runtime model.
+
 Read the Vue track when you want to understand the shared runtime behavior underneath the Nuxt wrapper.
 
 ::u-page-section{orientation="vertical"}

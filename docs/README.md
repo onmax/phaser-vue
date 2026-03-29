@@ -1,14 +1,25 @@
-# phaser-vue docs
+# Phaser Vue docs
 
-This app uses [Docus](https://docus.dev) on top of Nuxt and Nuxt Content.
+This app contains the documentation site for the `phaser-vue` workspace. It uses Docus on top of Nuxt and Nuxt Content.
 
-## Commands
+## Quickstart
+
+Run these commands from the `phaser-vue/` workspace root.
 
 ```bash
 pnpm install
-pnpm --filter docs dev
-pnpm --filter docs build
+pnpm dev:docs
+```
+
+Expected result: the docs site starts locally so you can edit pages in `docs/content/` and review the rendered navigation and content structure in a browser.
+
+## Common workflows
+
+```bash
+pnpm docs:build
 pnpm --filter docs preview
 ```
 
-The docs follow the same Docus patterns used in `/Users/maxi/nuxt/convex/docs`, with a custom header, a Vue/Nuxt subheader switcher, and numbered content sections for stable navigation.
+## Notes
+
+The docs use a custom landing page, a Vue and Nuxt track switcher, and numbered content sections for stable navigation.
