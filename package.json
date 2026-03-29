@@ -15,6 +15,10 @@
     "lint:fix": "eslint . --fix --ignore-pattern docs/.output --ignore-pattern playground/.output --ignore-pattern '**/dist/**'",
     "typecheck": "pnpm --filter @onmax/phaser-vue typecheck && pnpm --filter @onmax/nuxt-phaser typecheck && pnpm --filter playground typecheck",
     "test": "pnpm --filter @onmax/phaser-vue test && pnpm --filter @onmax/nuxt-phaser test",
+    "docs:build": "pnpm --filter docs build",
+    "playground:build": "pnpm --filter playground build",
+    "vercel:build:docs": "rm -rf .vercel/output && pnpm --filter docs build && cp -r docs/.vercel/output .vercel/output",
+    "vercel:build:playground": "rm -rf .vercel/output && pnpm --filter playground build && cp -r playground/.vercel/output .vercel/output",
     "validate:packages": "pnpm build && publint packages/vue && publint packages/nuxt"
   },
   "devDependencies": {
@@ -22,22 +26,30 @@
     "@nuxt/content": "catalog:",
     "@nuxt/devtools": "catalog:nuxt",
     "@nuxt/eslint-config": "catalog:lint",
+    "@nuxt/fonts": "catalog:",
     "@nuxt/kit": "catalog:prod",
     "@nuxt/module-builder": "catalog:build",
     "@nuxt/test-utils": "catalog:test",
     "@types/node": "catalog:types",
     "@vitejs/plugin-vue": "catalog:vite",
     "@vue/test-utils": "catalog:test",
+    "@vercel/analytics": "catalog:",
+    "@vercel/speed-insights": "catalog:",
+    "@vueuse/core": "catalog:",
+    "docus": "catalog:",
     "eslint": "catalog:lint",
     "jsdom": "catalog:test",
     "nuxt": "catalog:",
     "phaser": "catalog:prod",
     "publint": "catalog:build",
+    "tailwindcss": "catalog:",
     "typescript": "catalog:types",
     "vite": "catalog:vite",
     "vite-plugin-dts": "catalog:build",
     "vitest": "catalog:test",
     "vue": "catalog:vue",
-    "vue-tsc": "catalog:types"
+    "vue-tsc": "catalog:types",
+    "zod": "catalog:",
+    "zod-to-json-schema": "catalog:"
   }
 }

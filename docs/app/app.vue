@@ -1,58 +1,57 @@
+<script setup lang="ts">
+import type { ContentNavigationItem } from '@nuxt/content'
+import { transformNavigation } from './utils/navigation'
+
+const { seo } = useAppConfig()
+const site = useSiteConfig()
+const route = useRoute()
+const { activeModule } = useDocsModules()
+
+const hasDocsSubheader = computed(() => route.meta.layout === 'docs' && activeModule.value !== null)
+
+useHead({
+  meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+  link: [{ rel: 'icon', href: '/favicon.ico' }],
+})
+
+useSeoMeta({
+  titleTemplate: title => title ? `${title} · ${site.name}` : site.name,
+  title: seo.title,
+  description: seo.description,
+  ogSiteName: site.name,
+  twitterCard: 'summary_large_image',
+})
+
+const { data: navigation } = await useAsyncData('navigation_docs', () => queryCollectionNavigation('docs'), {
+  transform: (data: ContentNavigationItem[]) => transformNavigation(data, false),
+})
+
+const { data: files } = useLazyAsyncData('search_docs', () => queryCollectionSearchSections('docs'), {
+  server: false,
+})
+
+provide('navigation', navigation)
+</script>
+
 <template>
   <UApp>
-    <div class="docs-shell">
-      <aside class="docs-nav">
-        <h1>phaser-vue docs</h1>
-        <nav>
-          <NuxtLink to="/">
-            Overview
-          </NuxtLink>
-          <NuxtLink to="/guides/getting-started">
-            Getting started
-          </NuxtLink>
-          <NuxtLink to="/guides/performance">
-            Performance
-          </NuxtLink>
-          <NuxtLink to="/guides/nuxt">
-            Nuxt
-          </NuxtLink>
-          <NuxtLink to="/reference/api">
-            API
-          </NuxtLink>
-        </nav>
-      </aside>
-      <main class="docs-main">
+    <NuxtLoadingIndicator color="var(--ui-primary)" />
+
+    <div :class="{ 'docs-app-has-subheader': hasDocsSubheader }">
+      <AppHeader v-if="$route.meta.header !== false" />
+
+      <NuxtLayout>
         <NuxtPage />
-      </main>
+      </NuxtLayout>
+
+      <AppFooter v-if="$route.meta.footer !== false" />
     </div>
+
+    <ClientOnly>
+      <LazyUContentSearch
+        :files="files"
+        :navigation="navigation"
+      />
+    </ClientOnly>
   </UApp>
 </template>
-
-<style scoped>
-.docs-shell {
-  display: grid;
-  grid-template-columns: 240px minmax(0, 1fr);
-  min-height: 100vh;
-  font-family: ui-sans-serif, system-ui, sans-serif;
-}
-
-.docs-nav {
-  padding: 2rem;
-  background: #08101f;
-  color: #e2e8f0;
-}
-
-.docs-nav nav {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.docs-nav a {
-  color: #93c5fd;
-  text-decoration: none;
-}
-
-.docs-main {
-  padding: 2rem 3rem;
-}
-</style>

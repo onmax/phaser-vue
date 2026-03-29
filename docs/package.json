@@ -3,15 +3,23 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt prepare && nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "build": "nuxi build",
+    "dev": "nuxi dev",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview"
   },
   "dependencies": {
     "better-sqlite3": "^12.4.1",
-    "@nuxt/content": "^3.12.0",
-    "@nuxt/ui": "^4.5.1",
-    "nuxt": "^4.4.2"
+    "@nuxt/content": "catalog:",
+    "@nuxt/fonts": "catalog:",
+    "@nuxt/ui": "catalog:",
+    "@vercel/analytics": "catalog:",
+    "@vercel/speed-insights": "catalog:",
+    "@vueuse/core": "catalog:",
+    "docus": "catalog:",
+    "nuxt": "catalog:",
+    "tailwindcss": "catalog:",
+    "zod": "catalog:",
+    "zod-to-json-schema": "catalog:"
   }
 }

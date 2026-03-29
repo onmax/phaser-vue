@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+}
+
+:root {
+  --ui-radius: 0.8rem;
+  --ui-bg: #f7fafc;
+  --ui-bg-elevated: #ffffff;
+  --ui-text-highlighted: #0f172a;
+}
+
+@media (min-width: 1024px) {
+  :root:has(.docs-subheader) {
+    --ui-header-height: 7rem;
+  }
+}
+
+.dark {
+  --ui-bg: var(--color-slate-950);
+  --ui-bg-elevated: var(--color-slate-900);
+}
+
+.hero-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-glow::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(ellipse, oklch(from var(--color-sky-500) l c h / 0.12), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.landing-section-alt {
+  background: oklch(from var(--color-sky-50) l c h / 0.55);
+}
+
+.dark .landing-section-alt {
+  background: oklch(from var(--color-slate-900) l c h / 0.5);
+}
+
+.landing-install-command pre,
+.landing-install-command code,
+.landing-install-command .shiki span.line {
+  text-align: left;
+}

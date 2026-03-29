@@ -1,75 +1,14 @@
-# Nuxt Content Starter
+# phaser-vue docs
 
-Look at the [Nuxt Content documentation](https://content.nuxt.com) to learn more.
+This app uses [Docus](https://docus.dev) on top of Nuxt and Nuxt Content.
 
-## Setup
-
-Make sure to install dependencies:
+## Commands
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+pnpm --filter docs dev
+pnpm --filter docs build
+pnpm --filter docs preview
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+The docs follow the same Docus patterns used in `/Users/maxi/nuxt/convex/docs`, with a custom header, a Vue/Nuxt subheader switcher, and numbered content sections for stable navigation.
