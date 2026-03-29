@@ -26,6 +26,12 @@ pnpm dev:docs
 pnpm dev:example:minimal
 ```
 
+## Skills
+
+This repository exposes one public AI usage skill in [skills/phaser-best-practices](/Users/maxi/nimiq/pay/phaser-vue/skills/phaser-best-practices).
+
+Use it when you want an agent to work on Phaser 3 gameplay, architecture, scenes, physics, assets, UI panels, or performance issues without re-explaining the core Phaser constraints every time.
+
 ## Philosophy
 
 - Vue is for setup, UI, scene wiring, and low-frequency state.

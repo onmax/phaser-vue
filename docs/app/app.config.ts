@@ -3,22 +3,6 @@ export default defineAppConfig({
     locale: 'en',
     assistant: false,
   },
-  docsModules: [
-    {
-      id: 'vue',
-      label: 'Vue',
-      to: '/vue',
-      match: ['/vue', '/vue-guide', '/api-reference', '/examples', '/guides', '/roadmap'],
-      sidebarRoots: ['/vue-guide', '/api-reference', '/examples', '/guides', '/roadmap'],
-    },
-    {
-      id: 'nuxt',
-      label: 'Nuxt',
-      to: '/nuxt',
-      match: ['/nuxt', '/nuxt-module'],
-      sidebarRoots: ['/nuxt-module'],
-    },
-  ],
   header: {
     title: 'phaser-vue',
   },

@@ -12,3 +12,4 @@ The core rule stays the same across Vue and Nuxt: `PhaserGame` owns the actual `
 - [Installation](/getting-started/installation)
 - [First game](/getting-started/first-game)
 - [SSR and mounting](/getting-started/ssr-and-mounting)
+- [Skills](/getting-started/skills)

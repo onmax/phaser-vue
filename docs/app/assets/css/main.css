@@ -12,12 +12,6 @@
   --ui-text-highlighted: #0f172a;
 }
 
-@media (min-width: 1024px) {
-  :root:has(.docs-subheader) {
-    --ui-header-height: 7rem;
-  }
-}
-
 .dark {
   --ui-bg: var(--color-slate-950);
   --ui-bg-elevated: var(--color-slate-900);
