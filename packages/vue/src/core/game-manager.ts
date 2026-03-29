@@ -1,11 +1,11 @@
-import { computed, shallowRef } from 'vue'
 import type Phaser from 'phaser'
 import type { PhaserGameScope, SceneRecord } from '../types/internal'
 import type { PhaserBridge, PhaserGameProps, PhaserGameRuntimeDefaults, PhaserSceneDefinition } from '../types/public'
+import { computed, shallowRef } from 'vue'
 import { createPhaserBridge } from './bridge'
 import { warnDebug } from './debug'
 import { createInstanceId, registerGameInstance, unregisterGameInstance } from './instance-registry'
-import { registerManagedScene, createManagedSceneClass } from './scene-manager'
+import { createManagedSceneClass, registerManagedScene } from './scene-manager'
 import { isClient, loadPhaserRuntime } from './ssr'
 
 const defaultRuntimeDefaults: Required<PhaserGameRuntimeDefaults> = {

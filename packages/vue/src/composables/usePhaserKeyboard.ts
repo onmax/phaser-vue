@@ -1,5 +1,5 @@
-import { onUnmounted, shallowRef, watch } from 'vue'
 import type Phaser from 'phaser'
+import { onUnmounted, shallowRef, watch } from 'vue'
 import { useActivePhaserScene } from './usePhaserScene'
 
 export function usePhaserKeyboard(keys: string | string[]) {

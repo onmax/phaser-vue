@@ -60,11 +60,11 @@ export interface PhaserSceneDefinition<Events extends PhaserEventMap = PhaserEve
 }
 
 export interface PhaserBridge<Events extends PhaserEventMap = PhaserEventMap> {
-  on<K extends keyof Events & string>(event: K, handler: (payload: Events[K]) => void): () => void
-  once<K extends keyof Events & string>(event: K, handler: (payload: Events[K]) => void): () => void
-  off<K extends keyof Events & string>(event: K, handler: (payload: Events[K]) => void): void
-  emit<K extends keyof Events & string>(event: K, payload: Events[K]): void
-  clear(): void
+  on: <K extends keyof Events & string>(event: K, handler: (payload: Events[K]) => void) => () => void
+  once: <K extends keyof Events & string>(event: K, handler: (payload: Events[K]) => void) => () => void
+  off: <K extends keyof Events & string>(event: K, handler: (payload: Events[K]) => void) => void
+  emit: <K extends keyof Events & string>(event: K, payload: Events[K]) => void
+  clear: () => void
 }
 
 export interface PhaserObjectRef<T> {

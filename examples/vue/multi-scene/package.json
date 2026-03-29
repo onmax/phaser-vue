@@ -1,7 +1,7 @@
 {
   "name": "@examples/vue-multi-scene",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build"

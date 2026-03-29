@@ -1,7 +1,7 @@
+import type { NuxtPhaserModuleOptions, ResolvedNuxtPhaserModuleOptions } from './types'
 import { addComponent, addImports, addPlugin, addTemplate, addTypeTemplate, createResolver, defineNuxtModule } from '@nuxt/kit'
 import { defu } from 'defu'
 import { version } from '../package.json'
-import type { NuxtPhaserModuleOptions, ResolvedNuxtPhaserModuleOptions } from './types'
 
 export * from './types'
 

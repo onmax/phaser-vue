@@ -1,8 +1,8 @@
-import type { ShallowRef } from 'vue'
-import { inject, onMounted, onUnmounted, shallowRef, useAttrs, watch } from 'vue'
 import type Phaser from 'phaser'
-import type { ParentContainerScope, PhaserSceneScope } from '../types/internal'
+import type { ShallowRef } from 'vue'
+import type { ParentContainerScope } from '../types/internal'
 import type { PhaserObjectRef } from '../types/public'
+import { inject, onMounted, onUnmounted, shallowRef, useAttrs, watch } from 'vue'
 import { phaserParentContainerKey, phaserSceneScopeKey } from './context'
 import { warnDebug } from './debug'
 

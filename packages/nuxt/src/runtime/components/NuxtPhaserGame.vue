@@ -1,8 +1,8 @@
 <script setup lang="ts">
 defineOptions({ inheritAttrs: false })
 
-const runtimeConfig = useRuntimeConfig()
 const props = defineProps<{ instanceId?: string }>()
+const runtimeConfig = useRuntimeConfig()
 </script>
 
 <template>

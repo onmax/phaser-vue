@@ -1,5 +1,5 @@
-import { inject } from 'vue'
 import type { PhaserBridge, PhaserEventMap } from '../types/public'
+import { inject } from 'vue'
 import { phaserGameScopeKey } from '../core/context'
 import { getGameInstance } from '../core/instance-registry'
 

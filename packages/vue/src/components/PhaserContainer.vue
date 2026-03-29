@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { provide, shallowRef } from 'vue'
 import type Phaser from 'phaser'
+import type { CommonDisplayProps } from '../core/patchers'
+import { provide } from 'vue'
 import { phaserParentContainerKey } from '../core/context'
 import { useManagedPhaserObject } from '../core/object-lifecycle'
-import { patchDisplayObject, type CommonDisplayProps } from '../core/patchers'
+import { patchDisplayObject } from '../core/patchers'
 
 defineOptions({ name: 'PhaserContainer' })
 

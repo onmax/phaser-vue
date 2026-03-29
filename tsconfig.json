@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
     "target": "ES2022",
+    "jsx": "preserve",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "strict": true,
-    "jsx": "preserve",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "types": ["node"],
-    "baseUrl": ".",
     "paths": {
       "@onmax/phaser-vue": ["./packages/vue/src/index.ts"],
       "@onmax/nuxt-phaser": ["./packages/nuxt/src/module.ts"]
-    }
+    },
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "strict": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true
   }
 }

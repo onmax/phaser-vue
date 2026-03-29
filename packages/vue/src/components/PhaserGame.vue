@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed, inject, onMounted, onUnmounted, provide, watch } from 'vue'
 import type { PhaserGameExpose, PhaserGameProps } from '../types/public'
+import { computed, inject, onMounted, onUnmounted, provide, watch } from 'vue'
 import { phaserGameScopeKey, phaserPluginOptionsKey } from '../core/context'
-import { createGameManager } from '../core/game-manager'
 import { warnDebug } from '../core/debug'
+import { createGameManager } from '../core/game-manager'
 
 defineOptions({ name: 'PhaserGame' })
 

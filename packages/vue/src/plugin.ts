@@ -1,12 +1,12 @@
 import type { App, Plugin } from 'vue'
 import type { PhaserVuePluginOptions } from './types/public'
-import { phaserPluginOptionsKey } from './core/context'
 import PhaserContainer from './components/PhaserContainer.vue'
 import PhaserGame from './components/PhaserGame.vue'
 import PhaserImage from './components/PhaserImage.vue'
 import PhaserScene from './components/PhaserScene.vue'
 import PhaserSprite from './components/PhaserSprite.vue'
 import PhaserText from './components/PhaserText.vue'
+import { phaserPluginOptionsKey } from './core/context'
 
 export function createPhaserVue(options: PhaserVuePluginOptions = {}): Plugin {
   return {

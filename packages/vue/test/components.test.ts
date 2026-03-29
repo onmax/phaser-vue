@@ -1,6 +1,6 @@
 import { flushPromises, mount } from '@vue/test-utils'
-import { defineComponent, h, nextTick, ref } from 'vue'
 import { describe, expect, it, vi } from 'vitest'
+import { defineComponent, h, nextTick, ref } from 'vue'
 import PhaserGame from '../src/components/PhaserGame.vue'
 import PhaserImage from '../src/components/PhaserImage.vue'
 import PhaserScene from '../src/components/PhaserScene.vue'

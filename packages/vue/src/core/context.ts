@@ -1,7 +1,7 @@
-import type { InjectionKey, ShallowRef } from 'vue'
 import type Phaser from 'phaser'
-import type { PhaserGameRuntimeDefaults, PhaserVuePluginOptions } from '../types/public'
+import type { InjectionKey, ShallowRef } from 'vue'
 import type { ParentContainerScope, PhaserGameScope, PhaserSceneScope } from '../types/internal'
+import type { PhaserGameRuntimeDefaults, PhaserVuePluginOptions } from '../types/public'
 
 export const phaserPluginOptionsKey = Symbol('phaser-plugin-options') as InjectionKey<PhaserVuePluginOptions>
 export const phaserGameScopeKey = Symbol('phaser-game-scope') as InjectionKey<PhaserGameScope>

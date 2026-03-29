@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import type Phaser from 'phaser'
+import type { CommonDisplayProps } from '../core/patchers'
 import { useManagedPhaserObject } from '../core/object-lifecycle'
-import { patchDisplayObject, type CommonDisplayProps } from '../core/patchers'
+import { patchDisplayObject } from '../core/patchers'
 
 defineOptions({ name: 'PhaserText' })
+
+const props = defineProps<Props>()
+
+const emit = defineEmits<{ ready: [object: Phaser.GameObjects.Text] }>()
 
 interface Props extends CommonDisplayProps {
   text: string
   style?: Phaser.Types.GameObjects.Text.TextStyle
 }
-
-const props = defineProps<Props>()
-const emit = defineEmits<{ ready: [object: Phaser.GameObjects.Text] }>()
 
 const object = useManagedPhaserObject<Phaser.GameObjects.Text, Props>({
   name: 'PhaserText',

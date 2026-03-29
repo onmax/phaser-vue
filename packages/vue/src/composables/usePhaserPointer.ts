@@ -1,5 +1,5 @@
-import { onUnmounted, ref, shallowRef, watch } from 'vue'
 import type Phaser from 'phaser'
+import { onUnmounted, ref, shallowRef, watch } from 'vue'
 import { useActivePhaserScene } from './usePhaserScene'
 
 export function usePhaserPointer() {

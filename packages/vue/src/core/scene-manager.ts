@@ -1,8 +1,8 @@
-import type { ShallowRef } from 'vue'
-import { shallowRef } from 'vue'
 import type Phaser from 'phaser'
+import type { ShallowRef } from 'vue'
 import type { PhaserGameScope, SceneRecord } from '../types/internal'
 import type { PhaserSceneDefinition } from '../types/public'
+import { shallowRef } from 'vue'
 import { warnDebug } from './debug'
 
 export function registerManagedScene(

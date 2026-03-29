@@ -1,18 +1,20 @@
 <script setup lang="ts">
 import type Phaser from 'phaser'
+import type { CommonDisplayProps } from '../core/patchers'
 import { useManagedPhaserObject } from '../core/object-lifecycle'
-import { patchDisplayObject, type CommonDisplayProps } from '../core/patchers'
+import { patchDisplayObject } from '../core/patchers'
 
 defineOptions({ name: 'PhaserSprite' })
+
+const props = defineProps<Props>()
+
+const emit = defineEmits<{ ready: [object: Phaser.GameObjects.Sprite] }>()
 
 interface Props extends CommonDisplayProps {
   texture: string
   frame?: string | number
   playing?: string
 }
-
-const props = defineProps<Props>()
-const emit = defineEmits<{ ready: [object: Phaser.GameObjects.Sprite] }>()
 
 const object = useManagedPhaserObject<Phaser.GameObjects.Sprite, Props>({
   name: 'PhaserSprite',

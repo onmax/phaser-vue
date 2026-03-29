@@ -1,5 +1,5 @@
-import { inject } from 'vue'
 import type { AssetManifest } from '../types/public'
+import { inject } from 'vue'
 import { phaserGameScopeKey, phaserPluginOptionsKey } from '../core/context'
 
 export function usePhaserAssetUrl(manifest?: AssetManifest, options?: { baseUrl?: string }) {

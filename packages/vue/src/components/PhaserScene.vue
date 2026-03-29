@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed, inject, onUnmounted, provide, shallowRef, watch } from 'vue'
 import type { PhaserSceneComponentProps } from '../types/public'
+import { computed, inject, onUnmounted, provide, shallowRef, watch } from 'vue'
 import { phaserGameScopeKey, phaserSceneScopeKey } from '../core/context'
 import { warnDebug } from '../core/debug'
 
