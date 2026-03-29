@@ -1,6 +1,8 @@
 name: pkg-pr-new
 
 on:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -18,4 +20,9 @@ jobs:
       - uses: actions/checkout@v5
       - uses: ./.github/actions/setup-pnpm
       - run: pnpm validate:packages
-      - run: npx pkg-pr-new publish --compact './packages/vue' './packages/nuxt'
+      - if: github.event_name == 'pull_request'
+        run: npx pkg-pr-new publish --compact --pnpm './packages/vue' './packages/nuxt'
+      - if: github.event_name == 'push'
+        run: |
+          npx pkg-pr-new publish --compact --pnpm --comment=off --json output.json './packages/vue' './packages/nuxt'
+          cat output.json
