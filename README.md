@@ -1,40 +1,27 @@
-# `phaser-vue`
+<h1 align="center">@onmax/phaser-vue</h1>
 
-`phaser-vue` is a hybrid monorepo for Phaser 3 inside Vue 3 and Nuxt 4.
+<p align="center">Hybrid Phaser primitives for Vue and Nuxt</p>
 
-It does not try to hide Phaser behind a renderer. The core package gives you:
+<p align="center">
+  <a href="https://npmjs.com/package/@onmax/phaser-vue"><img src="https://img.shields.io/npm/v/@onmax/phaser-vue/latest.svg?style=flat&colorA=020420&colorB=00DC82" alt="npm version"></a>
+  <a href="https://npmjs.com/package/@onmax/nuxt-phaser"><img src="https://img.shields.io/npm/v/@onmax/nuxt-phaser/latest.svg?style=flat&colorA=020420&colorB=00DC82" alt="nuxt module version"></a>
+  <a href="https://npmjs.com/package/@onmax/phaser-vue"><img src="https://img.shields.io/npm/l/@onmax/phaser-vue.svg?style=flat&colorA=020420&colorB=00DC82" alt="license"></a>
+  <a href="https://vuejs.org"><img src="https://img.shields.io/badge/Vue-020420?logo=vuedotjs" alt="Vue"></a>
+  <a href="https://nuxt.com"><img src="https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js" alt="Nuxt"></a>
+</p>
 
-- `PhaserGame` as the host that owns `Phaser.Game`
-- `PhaserScene` as a scene-first registration layer
-- typed composables and bridge events for Vue-driven orchestration
-- small declarative primitives for common objects
-- raw access to `game`, `scene`, and underlying Phaser objects when you need it
+## Documentation
 
-## Packages
+**[phaser-vue-docs.vercel.app](https://phaser-vue-docs.vercel.app/)**
 
-- `@onmax/phaser-vue`
-- `@onmax/nuxt-phaser`
+## Demo
 
-## Commands
-
-```bash
-pnpm install
-pnpm build
-pnpm test
-pnpm dev:playground
-pnpm dev:docs
-pnpm dev:example:minimal
-```
+**[phaser-vue-playground.vercel.app](https://phaser-vue-playground.vercel.app/)**
 
 ## Skills
 
-This repository exposes one public AI usage skill in [skills/phaser-best-practices](/Users/maxi/nimiq/pay/phaser-vue/skills/phaser-best-practices).
+**[skills/phaser-best-practices](./skills/phaser-best-practices)**
 
-Use it when you want an agent to work on Phaser 3 gameplay, architecture, scenes, physics, assets, UI panels, or performance issues without re-explaining the core Phaser constraints every time.
+## License
 
-## Philosophy
-
-- Vue is for setup, UI, scene wiring, and low-frequency state.
-- Phaser stays in charge of hot-path runtime behavior.
-- Escape hatches are always available.
-- The Nuxt layer adds ergonomics, not a second runtime.
+MIT

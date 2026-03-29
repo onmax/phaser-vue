@@ -14,6 +14,7 @@ Build Phaser games with Vue orchestration, typed scene wiring, and explicit esca
 
 #links
 :u-button{to="/getting-started" size="xl" trailing-icon="i-lucide-arrow-right" label="Get started"}
+:u-button{to="https://phaser-vue-playground.vercel.app" target="_blank" size="xl" color="neutral" variant="outline" trailing-icon="i-lucide-monitor-play" label="Live demo"}
 :u-button{to="https://github.com/onmax/phaser-vue" target="_blank" size="xl" color="neutral" variant="outline" trailing-icon="i-simple-icons-github" label="View on GitHub"}
 
 #body
@@ -191,6 +192,17 @@ The Nuxt layer stays thin. It improves ergonomics without duplicating the core r
   Set defaults for `pixelArt`, `transparent`, `suspendWhenHidden`, and `assetsBaseUrl` in one Nuxt module config block.
   ::::
   :::
+::
+
+::u-page-section{orientation="vertical"}
+#title
+Try the demo
+
+#description
+Open the live Nuxt playground to see the bridge, scene wiring, and client-only host running together.
+
+#links
+:u-button{to="https://phaser-vue-playground.vercel.app" target="_blank" size="xl" label="Open playground" trailing-icon="i-lucide-arrow-up-right"}
 ::
 
 ::u-page-section{orientation="vertical"}
