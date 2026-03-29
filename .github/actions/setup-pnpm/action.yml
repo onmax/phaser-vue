@@ -9,7 +9,7 @@ inputs:
   install-command:
     description: Command used to install dependencies
     required: false
-    default: pnpm install --frozen-lockfile
+    default: pnpm install
 
 runs:
   using: composite
