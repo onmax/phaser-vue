@@ -1,0 +1,17 @@
+{
+  "name": "docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt prepare && nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "@nuxt/content": "^3.12.0",
+    "@nuxt/ui": "^4.5.1",
+    "nuxt": "^4.4.2"
+  }
+}

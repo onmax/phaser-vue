@@ -1,0 +1,41 @@
+{
+  "name": "@onmax/phaser-vue",
+  "version": "0.0.1-alpha.0",
+  "type": "module",
+  "description": "Hybrid Vue primitives and composables for Phaser 3",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "vitest run --config vitest.config.ts",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json"
+  },
+  "peerDependencies": {
+    "phaser": "^3.90.0",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:vite",
+    "@vue/test-utils": "catalog:test",
+    "jsdom": "catalog:test",
+    "vite": "catalog:vite",
+    "vite-plugin-dts": "catalog:build",
+    "vitest": "catalog:test",
+    "vue": "catalog:vue",
+    "vue-tsc": "catalog:types"
+  }
+}

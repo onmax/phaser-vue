@@ -1,0 +1,18 @@
+{
+  "name": "@examples/vue-multi-scene",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@onmax/phaser-vue": "workspace:*",
+    "phaser": "catalog:prod",
+    "vue": "catalog:vue"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:vite",
+    "vite": "catalog:vite"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
+    "typecheck": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@onmax/nuxt-phaser": "workspace:*",
+    "@nuxt/ui": "^4.5.1",
+    "phaser": "catalog:prod",
+    "nuxt": "^4.4.2",
+    "tailwindcss": "^4.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.2.5"
+  }
+}

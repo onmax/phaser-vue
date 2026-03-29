@@ -1,0 +1,42 @@
+{
+  "name": "@onmax/nuxt-phaser",
+  "version": "0.0.1-alpha.0",
+  "type": "module",
+  "description": "Nuxt module for @onmax/phaser-vue",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/module.mjs",
+  "types": "./dist/types.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.mts",
+      "import": "./dist/module.mjs"
+    }
+  },
+  "scripts": {
+    "build": "nuxt-module-build build",
+    "dev": "nuxi dev ../../playground",
+    "dev:build": "nuxi build ../../playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare",
+    "test": "vitest run --config vitest.config.ts",
+    "typecheck": "nuxt-module-build build"
+  },
+  "dependencies": {
+    "@nuxt/kit": "catalog:prod",
+    "@onmax/phaser-vue": "workspace:*",
+    "defu": "catalog:prod",
+    "pathe": "catalog:prod"
+  },
+  "peerDependencies": {
+    "nuxt": "^4.4.0",
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "catalog:build",
+    "@nuxt/test-utils": "catalog:test",
+    "nuxt": "catalog:",
+    "vitest": "catalog:test"
+  }
+}

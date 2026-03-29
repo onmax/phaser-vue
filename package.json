@@ -1,0 +1,43 @@
+{
+  "name": "phaser-vue-monorepo",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1-alpha.0",
+  "packageManager": "pnpm@10.32.1",
+  "scripts": {
+    "build": "pnpm --filter @onmax/phaser-vue build && pnpm --filter @onmax/nuxt-phaser build",
+    "dev:docs": "pnpm --filter docs dev",
+    "dev:playground": "pnpm --filter playground dev",
+    "dev:example:minimal": "pnpm --filter @examples/vue-minimal dev",
+    "dev:example:imperative": "pnpm --filter @examples/vue-imperative-escape-hatch dev",
+    "dev:example:multi-scene": "pnpm --filter @examples/vue-multi-scene dev",
+    "lint": "eslint . --ignore-pattern docs/.output --ignore-pattern playground/.output --ignore-pattern '**/dist/**'",
+    "lint:fix": "eslint . --fix --ignore-pattern docs/.output --ignore-pattern playground/.output --ignore-pattern '**/dist/**'",
+    "typecheck": "pnpm --filter @onmax/phaser-vue typecheck && pnpm --filter @onmax/nuxt-phaser typecheck && pnpm --filter playground typecheck",
+    "test": "pnpm --filter @onmax/phaser-vue test && pnpm --filter @onmax/nuxt-phaser test",
+    "validate:packages": "pnpm build && publint packages/vue && publint packages/nuxt"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:lint",
+    "@nuxt/content": "catalog:",
+    "@nuxt/devtools": "catalog:nuxt",
+    "@nuxt/eslint-config": "catalog:lint",
+    "@nuxt/kit": "catalog:prod",
+    "@nuxt/module-builder": "catalog:build",
+    "@nuxt/test-utils": "catalog:test",
+    "@types/node": "catalog:types",
+    "@vitejs/plugin-vue": "catalog:vite",
+    "@vue/test-utils": "catalog:test",
+    "eslint": "catalog:lint",
+    "jsdom": "catalog:test",
+    "nuxt": "catalog:",
+    "phaser": "catalog:prod",
+    "publint": "catalog:build",
+    "typescript": "catalog:types",
+    "vite": "catalog:vite",
+    "vite-plugin-dts": "catalog:build",
+    "vitest": "catalog:test",
+    "vue": "catalog:vue",
+    "vue-tsc": "catalog:types"
+  }
+}
