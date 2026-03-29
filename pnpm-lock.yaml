@@ -12,6 +12,9 @@ catalogs:
     publint:
       specifier: ^0.3.12
       version: 0.3.18
+    typescript:
+      specifier: ^5.9.3
+      version: 5.9.3
     vite-plugin-dts:
       specifier: ^4.5.4
       version: 4.5.4
@@ -99,9 +102,6 @@ catalogs:
     '@types/node':
       specifier: ^24.9.2
       version: 24.12.0
-    typescript:
-      specifier: ^5.9.3
-      version: 5.9.3
     vue-tsc:
       specifier: ^3.1.2
       version: 3.2.6
@@ -191,7 +191,7 @@ importers:
         specifier: 'catalog:'
         version: 4.2.2
       typescript:
-        specifier: catalog:types
+        specifier: catalog:build
         version: 5.9.3
       vite:
         specifier: catalog:vite
@@ -392,7 +392,7 @@ importers:
         version: 4.2.2
     devDependencies:
       typescript:
-        specifier: catalog:types
+        specifier: catalog:build
         version: 5.9.3
       vue-tsc:
         specifier: catalog:types
