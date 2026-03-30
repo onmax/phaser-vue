@@ -36,6 +36,15 @@ const manager = createGameManager({
 provide(phaserGameScopeKey, manager.scope)
 const containerEl = manager.scope.containerEl
 
+function normalizeDimension(value: number | string | undefined) {
+  return typeof value === 'number' ? `${value}px` : value
+}
+
+const hostStyle = computed(() => ({
+  width: normalizeDimension(props.width),
+  height: normalizeDimension(props.height),
+}))
+
 const structuralSignature = computed(() => JSON.stringify({
   width: props.width,
   height: props.height,
@@ -73,15 +82,12 @@ defineExpose(exposeApi)
 </script>
 
 <template>
-  <div class="phaser-game-host">
+  <div class="phaser-game-host" :style="hostStyle">
     <slot v-if="!manager.scope.mounted.value" name="placeholder" />
     <div
       ref="containerEl"
       class="phaser-game-canvas"
-      :style="{
-        width: typeof props.width === 'number' ? `${props.width}px` : props.width,
-        height: typeof props.height === 'number' ? `${props.height}px` : props.height,
-      }"
+      :style="hostStyle"
     />
     <div class="phaser-game-scenes" aria-hidden="true">
       <slot />
@@ -92,7 +98,7 @@ defineExpose(exposeApi)
 <style scoped>
 .phaser-game-host {
   position: relative;
-  width: fit-content;
+  display: block;
 }
 
 .phaser-game-canvas {

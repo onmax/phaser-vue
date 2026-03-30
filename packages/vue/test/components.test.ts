@@ -26,6 +26,48 @@ describe('components', () => {
     wrapper.unmount()
   })
 
+  it('applies percentage sizing to both host and canvas containers', async () => {
+    const scene = definePhaserScene({ key: 'main' })
+
+    const wrapper = mount(PhaserGame, {
+      props: { width: '100%', height: '100%' },
+      slots: {
+        default: () => h(PhaserScene, { sceneKey: 'main', definition: scene }),
+      },
+    })
+
+    await flushPromises()
+
+    const host = wrapper.get('.phaser-game-host').element as HTMLElement
+    const canvas = wrapper.get('.phaser-game-canvas').element as HTMLElement
+
+    expect(host.style.width).toBe('100%')
+    expect(host.style.height).toBe('100%')
+    expect(canvas.style.width).toBe('100%')
+    expect(canvas.style.height).toBe('100%')
+  })
+
+  it('normalizes numeric sizing to pixel values on the host', async () => {
+    const scene = definePhaserScene({ key: 'main' })
+
+    const wrapper = mount(PhaserGame, {
+      props: { width: 320, height: 240 },
+      slots: {
+        default: () => h(PhaserScene, { sceneKey: 'main', definition: scene }),
+      },
+    })
+
+    await flushPromises()
+
+    const host = wrapper.get('.phaser-game-host').element as HTMLElement
+    const canvas = wrapper.get('.phaser-game-canvas').element as HTMLElement
+
+    expect(host.style.width).toBe('320px')
+    expect(host.style.height).toBe('240px')
+    expect(canvas.style.width).toBe('320px')
+    expect(canvas.style.height).toBe('240px')
+  })
+
   it('warns when a primitive mounts without scene context', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
     mount(PhaserImage, { props: { texture: 'bg' } })
