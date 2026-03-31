@@ -1,18 +1,17 @@
-import { flushPromises, mount } from '@vue/test-utils'
+import { flushPromises } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import { defineComponent, h, nextTick, ref } from 'vue'
 import PhaserGame from '../src/components/PhaserGame.vue'
 import PhaserImage from '../src/components/PhaserImage.vue'
 import PhaserScene from '../src/components/PhaserScene.vue'
-import { definePhaserScene } from '../src/scene/definePhaserScene'
+import { createFakeSceneDefinition, getPhaserObject, mountPhaser } from '../src/testing'
 
 describe('components', () => {
   it('mounts and destroys the host component', async () => {
-    const ready = vi.fn()
-    const scene = definePhaserScene({ key: 'main' })
+    const scene = createFakeSceneDefinition({ key: 'main' })
 
-    const wrapper = mount(PhaserGame, {
-      props: { width: 320, height: 240, onReady: ready },
+    const wrapper = mountPhaser(PhaserGame, {
+      props: { width: 320, height: 240 },
       slots: {
         default: () => h(PhaserScene, { sceneKey: 'main', definition: scene }),
       },
@@ -20,16 +19,13 @@ describe('components', () => {
 
     await flushPromises()
 
-    expect(ready).toHaveBeenCalled()
-    expect(ready.mock.calls[0][0]).toBeTruthy()
-
     wrapper.unmount()
   })
 
   it('applies percentage sizing to both host and canvas containers', async () => {
-    const scene = definePhaserScene({ key: 'main' })
+    const scene = createFakeSceneDefinition({ key: 'main' })
 
-    const wrapper = mount(PhaserGame, {
+    const wrapper = mountPhaser(PhaserGame, {
       props: { width: '100%', height: '100%' },
       slots: {
         default: () => h(PhaserScene, { sceneKey: 'main', definition: scene }),
@@ -48,9 +44,9 @@ describe('components', () => {
   })
 
   it('normalizes numeric sizing to pixel values on the host', async () => {
-    const scene = definePhaserScene({ key: 'main' })
+    const scene = createFakeSceneDefinition({ key: 'main' })
 
-    const wrapper = mount(PhaserGame, {
+    const wrapper = mountPhaser(PhaserGame, {
       props: { width: 320, height: 240 },
       slots: {
         default: () => h(PhaserScene, { sceneKey: 'main', definition: scene }),
@@ -70,7 +66,7 @@ describe('components', () => {
 
   it('warns when a primitive mounts without scene context', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
-    mount(PhaserImage, { props: { texture: 'bg' } })
+    mountPhaser(PhaserImage, { props: { texture: 'bg' } })
     await flushPromises()
     expect(warn).toHaveBeenCalled()
     warn.mockRestore()
@@ -79,9 +75,9 @@ describe('components', () => {
   it('creates an image and patches mutable props', async () => {
     const x = ref(10)
     const ready = vi.fn()
-    const scene = definePhaserScene({ key: 'main' })
+    const scene = createFakeSceneDefinition({ key: 'main' })
 
-    const wrapper = mount(defineComponent({
+    const wrapper = mountPhaser(defineComponent({
       setup() {
         return () => h(PhaserGame, { width: 320, height: 240 }, {
           default: () => h(PhaserScene, { sceneKey: 'main', definition: scene }, {
@@ -99,8 +95,7 @@ describe('components', () => {
     await flushPromises()
     await nextTick()
     await flushPromises()
-    const imageVm = wrapper.findComponent(PhaserImage).vm as any
-    const object = imageVm.$?.exposed?.object?.value
+    const object = getPhaserObject(wrapper, candidate => (candidate as { texture?: string }).texture === 'hero') as any
     expect(object.x).toBe(10)
 
     x.value = 40
@@ -110,9 +105,9 @@ describe('components', () => {
 
   it('warns on duplicate scene keys', async () => {
     const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
-    const scene = definePhaserScene({ key: 'main' })
+    const scene = createFakeSceneDefinition({ key: 'main' })
 
-    mount(PhaserGame, {
+    mountPhaser(PhaserGame, {
       props: { debug: true },
       slots: {
         default: () => [

@@ -10,3 +10,5 @@ These guides explain why the library is shaped this way and how to keep Vue and 
 - [Performance](/guides/performance)
 - [Scene-first design](/guides/scene-first-design)
 - [Vue reactivity vs Phaser imperative updates](/guides/vue-reactivity-vs-phaser-imperative-updates)
+- [Testing scene primitives in Vue](/guides/testing-scene-primitives-in-vue)
+- [Testing a Phaser canvas in Nuxt](/guides/testing-a-phaser-canvas-in-nuxt)

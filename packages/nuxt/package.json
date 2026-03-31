@@ -18,6 +18,10 @@
     ".": {
       "types": "./dist/types.d.mts",
       "import": "./dist/module.mjs"
+    },
+    "./testing": {
+      "types": "./dist/testing.d.ts",
+      "import": "./dist/testing.mjs"
     }
   },
   "main": "./dist/module.mjs",
@@ -34,8 +38,22 @@
     "typecheck": "nuxt-module-build build"
   },
   "peerDependencies": {
+    "@nuxt/test-utils": "^4.0.0",
+    "@testing-library/vue": "^8.1.0",
     "nuxt": "^4.4.0",
-    "phaser": "^3.90.0"
+    "phaser": "^3.90.0",
+    "vitest": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@nuxt/test-utils": {
+      "optional": true
+    },
+    "@testing-library/vue": {
+      "optional": true
+    },
+    "vitest": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@nuxt/kit": "catalog:prod",

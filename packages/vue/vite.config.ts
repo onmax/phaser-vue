@@ -15,10 +15,13 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: {
+        index: resolve(__dirname, 'src/index.ts'),
+        testing: resolve(__dirname, 'src/testing/index.ts'),
+      },
       name: 'PhaserVue',
       formats: ['es', 'cjs'],
-      fileName: format => format === 'es' ? 'index.mjs' : 'index.cjs',
+      fileName: (format, entryName) => `${entryName}.${format === 'es' ? 'mjs' : 'cjs'}`,
     },
     rollupOptions: {
       external: ['vue', 'phaser'],
@@ -34,5 +37,7 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./test/setup.ts'],
+    include: ['test/**/*.test.ts'],
+    exclude: ['test/**/*.browser.test.ts'],
   },
 })

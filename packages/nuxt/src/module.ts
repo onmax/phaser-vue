@@ -2,6 +2,7 @@ import type { NuxtPhaserModuleOptions, ResolvedNuxtPhaserModuleOptions } from '.
 import { addComponent, addImports, addPlugin, addTemplate, addTypeTemplate, createResolver, defineNuxtModule } from '@nuxt/kit'
 import { defu } from 'defu'
 import { version } from '../package.json'
+import { resolveModuleOptions } from './options'
 
 export * from './types'
 
@@ -23,22 +24,7 @@ const coreImports = [
   'useSceneEvent',
 ] as const
 
-export function resolveModuleOptions(options: NuxtPhaserModuleOptions = {}): ResolvedNuxtPhaserModuleOptions {
-  return {
-    autoImports: options.autoImports ?? true,
-    components: options.components ?? true,
-    componentPrefix: options.componentPrefix ?? 'Phaser',
-    clientOnly: options.clientOnly ?? true,
-    debug: options.debug ?? false,
-    devtools: options.devtools ?? false,
-    defaults: {
-      pixelArt: options.defaults?.pixelArt ?? false,
-      transparent: options.defaults?.transparent ?? false,
-      suspendWhenHidden: options.defaults?.suspendWhenHidden ?? true,
-      assetsBaseUrl: options.defaults?.assetsBaseUrl ?? '/',
-    },
-  }
-}
+export { resolveModuleOptions } from './options'
 
 export default defineNuxtModule<NuxtPhaserModuleOptions>({
   meta: {

@@ -44,6 +44,8 @@ catalogs:
     phaser: ^3.90.0
   test:
     '@nuxt/test-utils': 4.0.0
+    '@testing-library/vue': ^8.1.0
+    '@vitest/browser-playwright': ^4.1.1
     '@vue/test-utils': ^2.4.6
     jsdom: ^29.0.1
     vitest: ^4.1.1

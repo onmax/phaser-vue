@@ -50,6 +50,21 @@ pnpm dev:docs
 pnpm dev:playground
 ```
 
+## Testing model
+
+The workspace now ships separate testing entrypoints for the published packages:
+
+- `@onmax/phaser-vue/testing`
+- `@onmax/nuxt-phaser/testing`
+
+Use the Vue entrypoint for unit tests, component tests, and fake-runtime harnesses. Use the Nuxt entrypoint for `mountSuspended()` and `renderSuspended()` wrappers in Nuxt runtime tests.
+
+Recommended layers:
+
+- Vitest + fake runtime for scene and component unit tests
+- Vitest Browser Mode for canvas and client-only smoke tests
+- Playwright for gameplay and end-to-end flows
+
 ## Workspace layout
 
 ```text
