@@ -23,6 +23,8 @@ export default defineNuxtConfig({
 - `NuxtPhaserGame` client-only wrapper
 - public runtime config defaults
 
+The module owns global component registration. Its runtime plugin installs `createPhaserVue()` with `registerComponents: false`, so Nuxt gets the shared Phaser context/defaults without re-registering `PhaserGame`, `PhaserScene`, or the other primitives during dev/HMR.
+
 ## Testing
 
 `@onmax/nuxt-phaser` publishes a Nuxt-aware testing entrypoint:

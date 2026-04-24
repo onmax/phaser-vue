@@ -6,5 +6,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(createPhaserVue({
     debug: runtimeConfig.public.phaser.debug,
     defaults: runtimeConfig.public.phaser.defaults,
+    registerComponents: false,
   }))
 })

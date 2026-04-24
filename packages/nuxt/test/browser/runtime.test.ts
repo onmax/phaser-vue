@@ -39,7 +39,10 @@ describe('nuxt browser runtime', () => {
     const wrapper = mount(TestHost, {
       attachTo: document.body,
       global: {
-        plugins: [createPhaserVue()],
+        plugins: [createPhaserVue({ registerComponents: false })],
+        components: {
+          PhaserGame,
+        },
         stubs: {
           ClientOnly: {
             template: '<slot />',
