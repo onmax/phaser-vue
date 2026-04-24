@@ -20,7 +20,7 @@
       "import": "./dist/module.mjs"
     },
     "./testing": {
-      "types": "./dist/testing.d.ts",
+      "types": "./dist/testing.d.mts",
       "import": "./dist/testing.mjs"
     }
   },

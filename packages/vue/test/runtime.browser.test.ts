@@ -4,10 +4,15 @@ import { h } from 'vue'
 import Phaser from 'phaser'
 import PhaserGame from '../src/components/PhaserGame.vue'
 import PhaserScene from '../src/components/PhaserScene.vue'
+import { preloadPhaserRuntime } from '../src'
 import { createPhaserVue } from '../src/plugin'
 import { definePhaserScene } from '../src/scene/definePhaserScene'
 
 describe('browser runtime', () => {
+  it('preloads the cached Phaser runtime before a game mounts', async () => {
+    await expect(preloadPhaserRuntime()).resolves.toBe(Phaser)
+  })
+
   it('mounts a real Phaser canvas in the browser', async () => {
     const scene = definePhaserScene({
       key: 'browser-demo',

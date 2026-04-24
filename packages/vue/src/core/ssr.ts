@@ -16,3 +16,7 @@ export async function loadPhaserRuntime() {
 
   return phaserRuntimePromise
 }
+
+export async function preloadPhaserRuntime() {
+  return loadPhaserRuntime()
+}

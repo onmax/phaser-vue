@@ -19,6 +19,7 @@ export { usePhaserResize } from './composables/usePhaserResize'
 export { useActivePhaserScene, usePhaserScene } from './composables/usePhaserScene'
 export { useSceneEvent } from './composables/useSceneEvent'
 export { createPhaserBridge } from './core/bridge'
+export { preloadPhaserRuntime } from './core/ssr'
 export { createPhaserVue } from './plugin'
 export { definePhaserScene } from './scene/definePhaserScene'
 

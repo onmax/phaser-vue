@@ -10,6 +10,7 @@ const coreImports = [
   'createPhaserBridge',
   'defineAssetManifest',
   'definePhaserScene',
+  'preloadPhaserRuntime',
   'useActivePhaserScene',
   'useGameEvent',
   'usePhaserAssetUrl',

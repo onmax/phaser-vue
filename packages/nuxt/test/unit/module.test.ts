@@ -50,6 +50,9 @@ describe('nuxt module', async () => {
 
     expect(addPlugin).toHaveBeenCalled()
     expect(addImports).toHaveBeenCalled()
+    expect(addImports).toHaveBeenCalledWith(expect.arrayContaining([
+      expect.objectContaining({ name: 'preloadPhaserRuntime', from: '#phaser' }),
+    ]))
     expect(addTemplate).toHaveBeenCalled()
     expect(addTypeTemplate).toHaveBeenCalled()
     expect(addComponent).toHaveBeenCalled()
