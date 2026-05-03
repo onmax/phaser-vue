@@ -6,12 +6,18 @@ import PhaserImage from './components/PhaserImage.vue'
 import PhaserScene from './components/PhaserScene.vue'
 import PhaserSprite from './components/PhaserSprite.vue'
 import PhaserText from './components/PhaserText.vue'
-import { phaserPluginOptionsKey } from './core/context'
+import { createPhaserVueContext } from './context'
 
 export function createPhaserVue(options: PhaserVuePluginOptions = {}): Plugin {
+  const { registerComponents = true, ...contextOptions } = options
+  const contextPlugin = createPhaserVueContext(contextOptions)
+
   return {
     install(app: App) {
-      app.provide(phaserPluginOptionsKey, options)
+      app.use(contextPlugin)
+      if (!registerComponents)
+        return
+
       app.component('PhaserGame', PhaserGame)
       app.component('PhaserScene', PhaserScene)
       app.component('PhaserContainer', PhaserContainer)

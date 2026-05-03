@@ -22,6 +22,12 @@ pnpm add @onmax/phaser-vue phaser
 - `usePhaserScene`
 - `usePhaserBridge`
 
+Integration layers that own component registration can use the lightweight context entry without importing Phaser component modules:
+
+```ts
+import { createPhaserVueContext } from '@onmax/phaser-vue/context'
+```
+
 ## Testing
 
 `@onmax/phaser-vue` now publishes a dedicated testing entrypoint:

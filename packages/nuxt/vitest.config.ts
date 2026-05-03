@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vitest/config'
 
 const rootDir = fileURLToPath(new URL('./test/fixture', import.meta.url))
+const phaserVueContextEntry = fileURLToPath(new URL('../vue/src/context.ts', import.meta.url))
 const phaserVueEntry = fileURLToPath(new URL('../vue/src/index.ts', import.meta.url))
 const phaserVueTestingEntry = fileURLToPath(new URL('../vue/src/testing/index.ts', import.meta.url))
 
@@ -12,6 +13,7 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: [
+      { find: '@onmax/phaser-vue/context', replacement: phaserVueContextEntry },
       { find: '@onmax/phaser-vue/testing', replacement: phaserVueTestingEntry },
       { find: '@onmax/phaser-vue', replacement: phaserVueEntry },
     ],
@@ -43,6 +45,7 @@ export default defineConfig({
         resolve: {
           alias: [
             { find: '#imports', replacement: fileURLToPath(new URL('./test/browser/imports.ts', import.meta.url)) },
+            { find: '@onmax/phaser-vue/context', replacement: phaserVueContextEntry },
             { find: '@onmax/phaser-vue/testing', replacement: phaserVueTestingEntry },
             { find: '@onmax/phaser-vue', replacement: phaserVueEntry },
           ],

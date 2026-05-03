@@ -7,6 +7,7 @@ export type PhaserHmrStrategy = 'recreate' | 'preserve'
 export interface PhaserVuePluginOptions {
   debug?: boolean
   defaults?: PhaserGameRuntimeDefaults
+  registerComponents?: boolean
 }
 
 export interface PhaserGameRuntimeDefaults {

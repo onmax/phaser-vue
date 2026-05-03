@@ -16,6 +16,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
+        context: resolve(__dirname, 'src/context.ts'),
         index: resolve(__dirname, 'src/index.ts'),
         testing: resolve(__dirname, 'src/testing/index.ts'),
       },

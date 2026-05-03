@@ -16,14 +16,14 @@ export default defineNuxtConfig({
 
 ## What it adds
 
-- runtime plugin that installs `createPhaserVue`
+- runtime plugin that installs the Phaser Vue context
 - `#phaser` alias
 - composable auto-imports
 - component registration
 - `NuxtPhaserGame` client-only wrapper
 - public runtime config defaults
 
-The module owns global component registration. Its runtime plugin installs `createPhaserVue()` with `registerComponents: false`, so Nuxt gets the shared Phaser context/defaults without re-registering `PhaserGame`, `PhaserScene`, or the other primitives during dev/HMR.
+The module owns global component registration. Its runtime plugin uses `@onmax/phaser-vue/context`, so Nuxt gets the shared Phaser context/defaults without pulling Phaser component modules into the global app plugin.
 
 ## Testing
 

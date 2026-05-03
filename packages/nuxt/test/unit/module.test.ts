@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 const addComponent = vi.fn()
@@ -57,5 +59,15 @@ describe('nuxt module', async () => {
     expect(addTypeTemplate).toHaveBeenCalled()
     expect(addComponent).toHaveBeenCalled()
     expect(nuxt.options.runtimeConfig.public.phaser.defaults.suspendWhenHidden).toBe(true)
+  })
+
+  it('uses the context-only plugin entry for Nuxt runtime startup', () => {
+    const runtimePlugin = readFileSync(
+      fileURLToPath(new URL('../../src/runtime/plugin.ts', import.meta.url)),
+      'utf8',
+    )
+
+    expect(runtimePlugin).toContain('@onmax/phaser-vue/context')
+    expect(runtimePlugin).not.toContain('createPhaserVue } from \'@onmax/phaser-vue\'')
   })
 })
