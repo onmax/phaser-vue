@@ -5,6 +5,7 @@
 - Scene lifecycle essentials
 - Scene responsibilities
 - Pause vs sleep vs stop vs remove
+- Simulation and renderer boundary
 - Cross-scene state patterns
 - Architecture sizes
 - UI overlay pattern
@@ -39,12 +40,34 @@ Typical split:
 
 - **BootScene**: startup-critical loading, splash, data priming
 - **MenuScene**: title, difficulty, save-slot choice, options entry
-- **GameScene**: core simulation and world logic
-- **UIScene**: HUD, counters, health bars, crosshairs, inventory overlays
+- **GameScene**: world rendering, input collection, camera, effects, and simulation bridge
+- **UIScene**: canvas HUD only when it benefits from Phaser camera / render behavior
 - **PauseScene**: pause menu or modal overlay
 - **GameOverScene**: run summary, restart flow, progression summary
 
-Keep HUD and gameplay separate unless the game is tiny.
+Keep HUD and gameplay separate unless the game is tiny. Prefer DOM or Vue overlays for dense text, settings, command menus, save-slot UI, narrative panels, and accessibility-sensitive controls.
+
+## Simulation and renderer boundary
+
+Use this split for any game with rules that need to survive scene restarts, testing, saving, or content growth:
+
+```text
+game/simulation/   # source of truth for entities, turns, progression, inventory, objectives
+game/input/        # actions and physical bindings
+game/assets/       # stable asset manifest keys and metadata
+phaser/scenes/     # scene orchestration and renderer lifecycle
+phaser/view/       # sprites, effects, camera helpers, animation playback
+phaser/adapters/   # bridge between simulation state and Phaser scenes
+ui/                # DOM or Vue HUD, menus, overlays, narrative panels
+```
+
+Rules:
+
+- simulation state must be serializable and independent from sprites, tweens, emitters, cameras, or containers
+- scenes read simulation state and translate it into render state
+- scenes emit input actions or UI actions back through a narrow bridge
+- camera, shake, hit-stop, particles, and animation playback stay renderer-facing
+- save data should include simulation state and content IDs, not Phaser object references
 
 ## Pause vs sleep vs stop vs remove
 

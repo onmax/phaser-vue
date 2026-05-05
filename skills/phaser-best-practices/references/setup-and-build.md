@@ -21,6 +21,7 @@ Use this as the default stack:
 - Phaser 3
 - Vite for local dev and production builds
 - TypeScript for scene keys, asset keys, and physics object typing
+- Vue 3 or Nuxt only when the game needs app-shell integration, DOM HUDs, docs, routing, settings, or package integration
 - `public/assets` for static runtime files, or module imports for bundled art files
 - `src/game` (or `src/`) as the game code root
 
@@ -50,14 +51,24 @@ public/
 src/
 ├── main.ts
 ├── game/
-│   ├── config/
-│   │   ├── game-config.ts
-│   │   └── keys.ts
+│   ├── simulation/
+│   │   ├── state.ts
+│   │   └── systems/
+│   ├── input/
+│   │   ├── actions.ts
+│   │   └── bindings.ts
+│   ├── assets/
+│   │   └── manifest.ts
+│   └── content/
+├── phaser/
 │   ├── scenes/
-│   ├── entities/
-│   ├── systems/
-│   ├── services/
-│   └── ui/
+│   ├── view/
+│   │   ├── sprites/
+│   │   ├── fx/
+│   │   └── camera/
+│   └── adapters/
+│       └── sceneBridge.ts
+├── ui/
 public/
 └── assets/
 ```
@@ -68,19 +79,28 @@ public/
 src/
 ├── main.ts
 ├── game/
-│   ├── config/
+│   ├── simulation/
+│   │   ├── state.ts
+│   │   ├── systems/
+│   │   └── rules/
+│   ├── content/
+│   │   ├── encounters/
+│   │   ├── items/
+│   │   └── maps/
+│   ├── input/
+│   └── assets/
+├── phaser/
+│   ├── boot/
 │   ├── scenes/
-│   ├── entities/
-│   ├── systems/
-│   ├── services/
-│   ├── ui/
-│   ├── data/
-│   └── utils/
+│   ├── view/
+│   └── adapters/
+├── ui/
 public/
 └── assets/
 ```
 
 Use the smallest structure that cleanly supports the current scope.
+For Vue or Nuxt integrations, treat `ui/` as the DOM app shell and keep `phaser/` responsible for canvas world rendering, effects, camera, and scene orchestration.
 
 ## Game configuration patterns
 

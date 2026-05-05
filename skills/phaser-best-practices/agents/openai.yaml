@@ -1,0 +1,4 @@
+interface:
+  display_name: "Phaser Best Practices"
+  short_description: "Build and debug Phaser 3 games"
+  default_prompt: "Use $phaser-best-practices to build, refactor, or debug a Phaser 3 game."

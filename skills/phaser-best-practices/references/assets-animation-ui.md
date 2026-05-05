@@ -32,6 +32,18 @@ public/assets/
 
 Keep file naming boring and consistent. Prefer `kebab-case` or `snake_case`, but use one style consistently.
 
+Do not let filenames become the gameplay API. Keep a manifest layer for stable keys and metadata, then have scenes and systems refer to those keys.
+
+```ts
+export const assetKeys = {
+  playerRun: 'characters/player/run',
+  hitSpark: 'fx/hit-spark',
+  commandPanel: 'ui/command-panel'
+} as const;
+```
+
+The manifest can point to `public/assets` paths, imported URLs, atlas frame names, spritesheet measurements, audio variants, or lazy-load groups. Gameplay code should consume the manifest keys, not raw paths.
+
 ## Images vs spritesheets vs atlases
 
 Choose the asset container deliberately.

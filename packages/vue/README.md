@@ -20,6 +20,8 @@ pnpm add @onmax/phaser-vue phaser
 - `createPhaserBridge`
 - `usePhaserGame`
 - `usePhaserScene`
+
+`createPhaserVue()` registers the Phaser components by default. Pass `registerComponents: false` when another integration layer, such as `@onmax/nuxt-phaser`, owns component registration and you only need the shared plugin context/defaults.
 - `usePhaserBridge`
 
 Integration layers that own component registration can use the lightweight context entry without importing Phaser component modules:
